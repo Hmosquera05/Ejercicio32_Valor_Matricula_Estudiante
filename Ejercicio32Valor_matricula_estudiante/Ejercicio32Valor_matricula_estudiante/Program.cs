@@ -1,5 +1,6 @@
 ﻿using System.Security.Cryptography;
 using System;
+using Ejercicio32Valor_matricula_estudiante;
 
 public class Program
 {
@@ -22,7 +23,30 @@ public class Program
           Se debe informar al usuario sobre el costo de la matrícula y el valor del subsidio.
 
           La aplicación debe preguntar al usuario si quiere volver al inicio o no para calcular la matrícula de un nuevo estudiante.*/
-       
+        {
+            bool continuar = true;
 
+            while (continuar)
+            {
+                Estudiante estudiante = new Estudiante();
+
+                Console.WriteLine("Ingrese el número de créditos:");
+                estudiante.Creditos = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Ingrese el estrato del estudiante (1, 2 o 3):");
+                estudiante.Estrato = int.Parse(Console.ReadLine());
+
+                decimal costoMatricula = estudiante.CalcularMatricula();
+                decimal subsidio = estudiante.CalcularSubsidio();
+
+                Console.WriteLine($"El costo de la matrícula es: {costoMatricula:C}");
+                Console.WriteLine($"El valor del subsidio es: {subsidio:C}");
+
+                Console.WriteLine("¿Desea calcular la matrícula de otro estudiante? (s/n):");
+                string respuesta = Console.ReadLine();
+                continuar = respuesta.Equals("s", StringComparison.OrdinalIgnoreCase);
+            }
+        }
     }
+
 }

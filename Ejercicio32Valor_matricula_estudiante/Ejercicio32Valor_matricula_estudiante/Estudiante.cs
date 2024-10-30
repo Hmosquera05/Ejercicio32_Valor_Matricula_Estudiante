@@ -12,7 +12,7 @@ namespace Ejercicio32Valor_matricula_estudiante
         public int Estrato { get; set; }
         public const decimal ValorCreditoNormal = 100000; // Asignar el valor normal del crédito
 
-        public decimal CalcularMatricula()
+        public decimal CalcularMatricula() 
         {
             decimal costoTotal = 0;
 
