@@ -10,7 +10,7 @@ namespace Ejercicio32Valor_matricula_estudiante
     {
         public int Creditos { get; set; }
         public int Estrato { get; set; }
-        public const decimal ValorCreditoNormal = 100000; // Asignar el valor normal del crédito
+        public const decimal ValorCreditoNormal = 100000; // Se Asigna el valor normal del crédito
 
         public decimal CalcularMatricula() 
         {
@@ -27,7 +27,7 @@ namespace Ejercicio32Valor_matricula_estudiante
                 costoTotal = (20 * ValorCreditoNormal) + (creditosExtras * ValorCreditoNormal * 2);
             }
 
-            // Aplicar descuento según el estrato
+            // Se Aplica el descuento según el estrato del estudiante
             if (Estrato == 1)
             {
                 costoTotal *= 0.2m; // 80% de descuento

@@ -33,16 +33,20 @@ public class Program
                 Console.WriteLine("Ingrese el número de créditos:");
                 estudiante.Creditos = int.Parse(Console.ReadLine());
 
-                Console.WriteLine("Ingrese el estrato del estudiante (1, 2 o 3):");
+                //Se le solicita al estudiante su estrato
+                Console.WriteLine("Ingrese el estrato del estudiante (1,2 o 3):");
                 estudiante.Estrato = int.Parse(Console.ReadLine());
 
+                //Dependiendo el estrato se muestran el costo de la matrícula + los subsidios
                 decimal costoMatricula = estudiante.CalcularMatricula();
                 decimal subsidio = estudiante.CalcularSubsidio();
 
+                //Se muestran los resultados de la matricula y subsidios que apliquen
                 Console.WriteLine($"El costo de la matrícula es: {costoMatricula:C}");
                 Console.WriteLine($"El valor del subsidio es: {subsidio:C}");
 
-                Console.WriteLine("¿Desea calcular la matrícula de otro estudiante? (s/n):");
+                //Se pregunta al usuario si quiere volver al inicio o no para calcular la matrícula de un nuevo estudiante.
+                Console.WriteLine("¿Desea calcular la matrícula de un nuevo estudiante? (s/n):");
                 string respuesta = Console.ReadLine();
                 continuar = respuesta.Equals("s", StringComparison.OrdinalIgnoreCase);
             }
